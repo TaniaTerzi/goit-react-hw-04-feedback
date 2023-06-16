@@ -1,0 +1,13 @@
+.statistic {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: baseline;
+    padding-left: 30px;
+    padding-bottom: 30px;
+   
+}
+
+.text {
+    font-weight: bold;
+}

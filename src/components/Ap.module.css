@@ -1,0 +1,10 @@
+.conteiner {
+    max-width: 300px;
+    border: 1px solid black;
+    background-color: antiquewhite;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 20px;
+}
