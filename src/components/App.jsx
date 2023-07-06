@@ -16,7 +16,7 @@
 // };
 
 
-  import { useState, useEffect } from "react";
+  import { useState } from "react";
   import FeedbackOptions from './FeedbackOptions/FeedbackOptions.js';
   import Section from "./Section/Section.js";
   import Statistics from "./Statistics/Statistics.js";
@@ -28,8 +28,8 @@
     const [good, setGood] = useState(0);
     const [neutral, setNeutral] = useState(0);
     const [bad, setBad] = useState(0);
-    const [total, setTotal] = useState(0);
-    const [percentage, setPercentage] = useState(0);
+    // const [total, setTotal] = useState(0);
+    // const [percentage, setPercentage] = useState(0);
 
     
     const handleGood = () => {
@@ -41,13 +41,27 @@
     const handleBad = () => {
       setBad(prevState => prevState + 1)
     };
-    useEffect(() => {
-      const totalFeedbacks = good + neutral + bad;
-      setTotal(totalFeedbacks);
 
-      const countPositiveFeedbackPercentage = Math.round(good / total * 100);
-      setPercentage(countPositiveFeedbackPercentage);
-    }, [good, neutral, bad, total, percentage]);
+    const totalFeedbacks = () => {
+     return good + neutral + bad;
+    };
+
+    const total = totalFeedbacks();
+
+    const countPositiveFeedbackPercentage = () => {
+      return Math.round(good / total * 100);
+     };
+
+     const percentage = countPositiveFeedbackPercentage();
+    
+       
+    // useEffect(() => {
+    //   const totalFeedbacks = good + neutral + bad;
+    //   setTotal(totalFeedbacks);
+
+    //   const countPositiveFeedbackPercentage = Math.round(good / total * 100);
+    //   setPercentage(countPositiveFeedbackPercentage);
+    // }, [good, neutral, bad, total, percentage]);
 
     const isFeedbsck = (total > 0);
 
